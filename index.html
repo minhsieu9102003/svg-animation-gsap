@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <section></section>
+    <section class="section">
+        <?xml version="1.0" encoding="utf-8"?>
+        <svg viewBox="0 0 505.379 501.4" width="705.379" height="701.4" xmlns="http://www.w3.org/2000/svg">
+            <path id='line' style="stroke: rgb(0, 0, 0); fill: none;"
+                d="M 106.56 82.258 C 313.761 66.953 284.62 165.991 292.56 242.258"
+                transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -8.881784197001252e-16)" />
+            <ellipse style="z-index:1000;fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="101.893" cy="82.703"
+                rx="6.666" ry="6.666" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -8.881784197001252e-16)" />
+            <ellipse style="z-index:1000;fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="293.94" cy="245.04"
+                rx="6.666" ry="6.666" transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -8.881784197001252e-16)" />
+            <ellipse class='ellipse' style="z-index:1000;fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="291.333"
+                cy="56.972" rx="6.666" ry="6.666"
+                transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -8.881784197001252e-16)" />
+            <path class='upper-line' style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"
+                d="M 108.818 81.52 C 110.724 82.357 291.804 59.982 284.17 57.789"
+                transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -8.881784197001252e-16)" />
+            <line class='line' style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="292.278" y1="63.004"
+                x2="292.925" y2="238.396"
+                transform="matrix(1, 0, 0, 1, 2.842170943040401e-14, -8.881784197001252e-16)" />
+        </svg>
+        <h1 class="header-top">DESIGN</h1>
+        <h1 class="watermark">CURVE</h1>
+
+
+
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+        const tl = gsap.timeline({
+            default: {
+                ease: 'power4.inOut',
+                duration: 4
+            },
+            scrollTrigger: {
+                trigger: '.section',
+                start: '-20% 40%',
+                end: 'bottom bottom',
+                toggleActions: ' play reverse play reverse',
+                scrub: 1
+            }
+        })
+
+        tl.to('#line', {
+            attr: { d: "M 106.56 82.258 C 104.038 246.924 196.076 248.058 292.56 242.258" }, // Ending path (curved)
+            duration: 2,
+        })
+            .to('.upper-line', {
+                attr: { d: 'M 99.651 87.631 C 99.401 87.929 62.079 263.047 58.661 261.908' },
+                duration: 2,
+            }, '<')
+
+            .to('.ellipse', {
+                attr: { cx: "59.325", cy: "268.869" },
+                duration: 2
+            }, '<')
+            .to('.line', {
+                attr: { x1: '65.38', y1: '269.179', x2: '287.258', y2: '247.785' },
+                duration: 2
+            }, '<')
+            .to('.watermark', {
+                transform: 'translate(0, 140%) ',
+                duration: 2
+            }, '<')
+    </script>
+</body>
+
+</html>
